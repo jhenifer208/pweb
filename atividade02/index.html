@@ -4,18 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <script type="text/javascript">
         function minhafuncao(arg) {
-        var raiz = math.sqrt(arg);
-        var msg="raiz de  " + arg+"é: "
+        var raiz = Math.sqrt(arg);
+        var msg="A raiz quadrada de " + arg + "é: " + raiz;
         alert(msg);
         } 
+
     </script>        
 </head>
 <body>
-    <button onclick="minhafuncao(25)"> </button>
-    <button onclick="minhafuncao(36)"> </button>
-    <button onclick="minhafuncao(49)"> </button>
+    <h1>Raiz Quadrada</h1> <!--TÍTULO GRANDE-->
+    <button onclick="minhafuncao(25)">raiz de 25 </button>
+    <button onclick="minhafuncao(36)"> raiz de 36</button>
+    <button onclick="minhafuncao(49)"> raiz de 49</button>
+
+    <hr>
+     <h1>Escrevendo na div</h1> <!--TÍTULO GRANDE-->
+    <div id="saida"></div>
+    <button onclick="escrevendonadiv()">Escrever</button>
+
+    <hr>
+     <h1>Escrevendo texto Dinamico</h1> <!--TÍTULO GRANDE-->
+    <div id="saida"></div>
+    <button onclick="escrevendonadiv()">Escrever</button>
+
+
+
+    <style>
+        button{
+            display: block;  
+            margin: 5px 0;   
+        }
+    </style>
+
 </body>
 
 </html>
