@@ -14,29 +14,36 @@
         function escreve(arg) {
             document.write(arg)
         }
-        function escrevediv(text){
-            document.getElementById("minhadiv").innerHTML=texto; 
+        function escrevediv(texto){
+            document.getElementById("minhadiv").innerHTML = texto; 
         }
+        function escrevediv2(texto){
+            document.getElementById("minhadiv").innerHTML = texto; 
+        }
+
 
     
     </script>        
 </head>
 <body>
     <h1>Raiz Quadrada</h1>  
-     <button onclick="minhafuncao(25)"> raiz de 25</button>
+    <button onclick="minhafuncao(25)"> raiz de 25</button>
     <button onclick="minhafuncao(36)"> raiz de 36</button> 
     <button onclick="minhafuncao(49)"> raiz de 49</button>
 
     <hr>
-    <h1>Escrevendo na div</h1> 
-    <button onclick="escrevediv(<h1>programaçao web</h1>)">Escrever</button><br></br> 
-    <div id="saida"></div> 
+    <h1>Escrevendo na DIV</h1> 
+    <button onclick="escrevediv('<h1>programaçao web</h1>')">Escrever</button><br></br> 
+    <div id="minhadiv"></div> 
  <hr>
     <h1>Escrevendo texto Dinamico</h1> 
    
     <button onclick="escrevediv2()">Escrever</button> 
- <div id="saida"></div>
-
+ <div id="minhadiv2"></div>
+ <hr>
+ <h1> Desafio</h1>
+ <button onclick="desafio ()">escreva um numero</button><br></br>
+ <div id="desafio2"></div>
 
     <style>
     button{

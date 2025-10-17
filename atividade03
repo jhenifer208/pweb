@@ -5,13 +5,9 @@
   <head>
 	<title>Javascript</title>
 	<script>
-
-
-
-
+     
 function escreverNumeros() {
-
-
+ 
     var n = parseInt(prompt("Digite o valor de N:"));
 
 
@@ -31,24 +27,17 @@ function escreverNumeros() {
         div.innerHTML += i + "<br>";
     }
 }
-			
-
-
+		
 	</script>	
   </head>
-
-
+ 
   <body>
    
    <h1>Desafio 01</h1> 
    
-   <button onclick="escreverNumeros()">Escreve </button> <br><br>
-
-
-
-
+   <button onclick="escreverNumeros()">Escreve </button><br><br>
+ 
    <div id="numeros"></div>
-
-
+ 
   </body>
 </html>
