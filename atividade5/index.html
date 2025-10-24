@@ -14,7 +14,7 @@
 
       for (let i = 0; i < pilhalivros.length; i++) {
         const pessoa = pilhalivros[i];
-        const tag = '<h5>' + i + '- Nome: ' + pessoa.nome + ' | Contato: '+ pessoa.contato + '</h5>';
+        const tag = '<h5>' + i + '- Nome: ' + pessoa.nome + ' | Contato: '+ pessoa.contato + '| Ano: ' + pessoa.ano + '</h5>';
         container.innerHTML += tag;
       }
     }
@@ -28,8 +28,9 @@
 	  // pega os valores digitados nos inputs
   	  const nome = document.getElementById('nome').value;
       const contato = document.getElementById('contato').value;
+      const ano = document.getElementById('ano').value;
 
-      pilhaPessoas.push({ nome, contato });
+      pilhalivros.push({ nome, contato, ano });
 
       // limpa os campos e atualiza a lista
 	  limpaCampos();
@@ -49,12 +50,12 @@
     }
 
     function limparLista() {
-      pilhaPessoas = [];
+      pilhalivros = [];
       mostrarLista();
     }
 
     function remover() {
-      if (pilhaPessoas.length === 0) {
+      if (pilhalivros.length === 0) {
         alert('A pilha está vazia!');
       } else {
         const removido = pilhalivros.pop();
@@ -64,7 +65,7 @@
     }
 
     function inverterPilha() {
-      pilhaPessoas.reverse();
+      pilhalivros.reverse();
       mostrarLista();
     }
   </script>
@@ -80,9 +81,9 @@
 	<input type="text" id="contato" placeholder="Digite o contato">
 
     <label>Ano</label>
-	<input type="text" id="contato" placeholder="Digite o contato">
+	<input type="text" id="ano" placeholder="Digite o contato">
 
-	<button onclick="adicionar()">Adicionar</button>
+	<button onclick="adicionar()">Publicar</button>
 	
 	
 	<hr>
