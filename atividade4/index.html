@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+
+<script>
+
+    let pilhapessoas = array ();
+
+    function mostrarlista (){
+ const container = document.getElementbyId('minhaDiv');
+ container.innerHTML = '';// Limpa o conteudo atual do container
+      for (var i = 0;i<pilhaPessoas.length;i++) {// mostrar os elementos
+      var tag = '<h5>'> + i + '-' + pilhapessoas[i]+  '<h5>';
+        container.innerHTML=+ tag;
+      }
+
+     }
+     function adicionar(){
+        var nome = promp('qual o nome da pessoa?');
+        pilhapessoas.push(nome);
+        mostrarlista();
+        function posicao(){
+            //pede o indice
+            var indice = ('qual posicao da lista deseja consultar?');
+            // converter para numero
+            indice = number(indice);
+            // valida se o indice esta dentro do intervalo
+            if(indice < 0 || indice>=pilhapessoas.length){
+                alert('Posicao invalida!');
+                return;
+            }
+        }//se tudo certo,mostra o nome
+        alert('Na posicao'+ indice+ 'esta:'+ pilhapessoas[indice]);
+     }
+    // funcao para remover a ultima pessoa (Topo da pilha)
+    function remover (){
+        if(pilhapessoas.length===0){
+            alert('A pilha esta vazia!')
+        }else{
+            //remove o ultimo elemento
+            let removido = pilhapessoas.pop();
+            alert('Removido:' + removido);
+            mostrarLista();
+        }
+    }
+    function limparLista(){
+        pilhapessoas = [];//reseta o array
+        mostrarLista();
+    }
+    function inverterPilha(){
+        //implementacao aqui
+    }
+     </script>
+      <body>
+        <h1>Lista de Pessoas </h1>
+        <button onclick="adicionar()">adicionar Pessoa</button>
+        <button onclick="posicao()">Posicao</button>
+        <button onclick="remover()">Remover</button>
+        <button onclick="limparLista()"> Limpar</button><br><br>
+        <button onclick="inverterpilha()">Inverter Pilha</button><br><br>
+        <div id="minhaDiv"></div>
+
+
+      </body>
+
+
+
+
+
+
+
+
+
+</head>

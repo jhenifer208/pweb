@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
+<head>
 
-  <head>
-	<title>Javascript</title>
-	<script>
+  <script>
      
-function escreverNumeros() {
- 
-    var n = parseInt(prompt("Digite o valor de N:"));
+     let linguagens = array();
+     linguagens [0] = 'dart';
+     linguagens [1] = 'PHP';
+     linguagens [2] = 'Java';
+     linguagens [3] = 'Pyton';
+     linguagens [4] = 'Perl'; 
+     linguagens [5] = 'ruby on rails';
+     linguagens [6] = 'c ++';
 
-
-    if (isNaN(n) || n <= 0) {
-        alert("Por favor, insira um número válido maior que zero.");
-        return;
+     function Mostrarlistalinguagens(){
+      const container = document.getElementbyId('minhaDiv');
+      for (var i = 0;i<linguagens.length;i++) {
+      var tag = '<h5>'> + i + '-' + linguagens[i]+  '<h5>';
+      container.innerHTML+= tag;
+      }
     }
+     function Posicaolinguagens(){
+      var indice = promp ('qual posicao da lista deseja consultar? ');
+      alert(linguagens[indice]);
+     }
 
 
-    var div = document.getElementById("numeros");
 
+     let Frutas = array();
+     Fruta [0] = 'Banana';
+     Fruta [1] = 'Uva';
+     Fruta [2] = 'Pera';
+     Fruta [3] = 'Caja';
+     Fruta [4] = 'Maca'; 
+     Fruta [5] = 'Tomate';
+     Fruta [6] = 'Maracuja';
 
-    div.innerHTML = "";
-
-
-    for (var i = 1; i <= n; i++) {
-        div.innerHTML += i + "<br>";
+     function Mostrarlistadefrutas(){
+      const container = document.getElementbyId('minhaDiv');
+      for (var i = 0;i<Frutas.length;i++) {
+      var tag = '<h5>'> + i + '-' + Frutas[i]+  '<h5>';
+      container.innerHTML+= tag;
+      }
     }
-}
-		
-	</script>	
-  </head>
- 
+     function PosicaoFrutas(){
+      var indice = promp ('qual posicao da lista deseja consultar? ');
+      alert(Frutas[indice]);
+     }
+      </script>
   <body>
-   
-   <h1>Desafio 01</h1> 
-   
-   <button onclick="escreverNumeros()">Escreve </button><br><br>
- 
-   <div id="numeros"></div>
- 
+    <h1> Array de linguagem</h1>
+    <button onclick="Mostrarlistalinguagens()">Criar Array</button> <br><br>
+     <button onclick="Posicaolinguagens()">posicao no Array</button>
+     <div id="minhaDiv1="></div>
+
+     <h1> Array de Frutas</h1>
+    <button onclick="MostrarlistadeFrutas()">Criar Array</button> <br><br>
+     <button onclick="PosicaoFrutas()">posicao no Array</button>
+     <div id="minhaDiv2="></div>
+
   </body>
-</html>
+
+</head>
+  
