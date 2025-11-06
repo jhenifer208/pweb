@@ -1,76 +1,69 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
-
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iago e jheniferr</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Atividade 04</h1>
+    <h1>Pop e Push</h1>
+    <button onclick="mostrarpessoas()">Mostrar pessoas</button>
+    <button onclick="Posicaopessoas()">Escolher pessoa</button>
+    <button onclick="Adicionarpessoas()">Adicionar pessoas</button>
+    <button onclick="remover()">Remover pessoas</button>
+    <button onclick="limpar()">Limpar lista</button>
+    <div id="minhaDiv"></div>
 
-<script>
+    <hr/>
+    <p>Jhenifer e Iago</p>
+    <a style="text-decoration: none;" href="index.html">Voltar</a><br/>
 
-    let pilhapessoas = Array ();
+    <script>
+        
+        let pessoas = [];
+        pessoas[0] = 'Pedro';
+        pessoas[1] = 'Castelo';
+        pessoas[2] = 'Agripino';
 
-    function mostrarlista (){
- const container = document.getElementbyId('minhaDiv');
- container.innerHTML = '';// Limpa o conteudo atual do container
-      for (var i = 0;i<pilhaPessoas.length;i++) {// mostrar os elementos
-      var tag = '<h5>'> + i + '-' + pilhapessoas[i]+  '<h5>';
-        container.innerHTML=+ tag;
-      }
-
-     }
-     function adicionar(){
-        var nome = promp('qual o nome da pessoa?');
-        pilhapessoas.push(nome);
-        mostrarlista();
-        function posicao(){
-            //pede o indice
-            var indice = ('qual posicao da lista deseja consultar?');
-            // converter para numero
-            indice = number(indice);
-            // valida se o indice esta dentro do intervalo
-            if(indice < 0 || indice>=pilhapessoas.length){
-                alert('Posicao invalida!');
-                return;
+        function mostrarpessoas() {
+            const container = document.getElementById("minhaDiv");
+            container.innerHTML = '';
+            for (let i = 0; i < pessoas.length; i++) {
+                let tag = `<h5>${i} - ${pessoas[i]}</h5>`;
+                container.innerHTML += tag;
             }
-        }//se tudo certo,mostra o nome
-        alert('Na posicao'+ indice+ 'esta:'+ pilhapessoas[indice]);
-     }
-    // funcao para remover a ultima pessoa (Topo da pilha)
-    function remover (){
-        if(pilhapessoas.length===0){
-            alert('A pilha esta vazia!')
-        }else{
-            //remove o ultimo elemento
-            let removido = pilhapessoas.pop();
-            alert('Removido:' + removido);
+        }
+
+        function Posicaopessoas() {
+            let indice = prompt('Qual posição deseja consultar?');
+            if (indice >= 0 && indice < pessoas.length) {
+                alert(pessoas[indice]);
+            } else {
+                alert("Índice inválido!");
+            }
+        }
+        
+        function Adicionarpessoas() {
+            var nome = prompt('Qual o nome da pessoa?')
+            pessoas.push(nome);
+            mostrarpessoas();
+        }
+        function remover(){
+            if (pessoas.length === 0) {
+                alert('A pilha está vazia');
+            } else {
+                let removido = pessoas.pop();
+                alert('Removido:' + removido);
+                mostrarLista();
+            }
+        }
+        function limpar(){
+            pessoas=[];
             mostrarLista();
         }
-    }
-    function limparLista(){
-        pilhapessoas = [];//reseta o Array
-        mostrarLista();
-    }
-    function inverterPilha(){
-        //implementacao aqui
-    }
-     </script>
-      <body>
-        <h1>Lista de Pessoas </h1>
-        <button onclick="adicionar()">adicionar Pessoa</button>
-        <button onclick="posicao()">Posicao</button>
-        <button onclick="remover()">Remover</button>
-        <button onclick="limparLista()"> Limpar</button><br><br>
-        <button onclick="inverterpilha()">Inverter Pilha</button><br><br>
-        <div id="minhaDiv"></div>
-
-
-      </body>
-
-
-
-
-
-
-
-
-
-</head>
+    </script>    
+</body>
+</html>
