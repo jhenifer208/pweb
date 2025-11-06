@@ -1,66 +1,77 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
-
-  <script>
-     
-     let linguagens = array();
-     linguagens [0] = 'dart';
-     linguagens [1] = 'PHP';
-     linguagens [2] = 'Java';
-     linguagens [3] = 'Pyton';
-     linguagens [4] = 'Perl'; 
-     linguagens [5] = 'ruby on rails';
-     linguagens [6] = 'c ++';
-
-     function Mostrarlistalinguagens(){
-      const container = document.getElementbyId('minhaDiv');
-      for (var i = 0;i<linguagens.length;i++) {
-      var tag = '<h5>'> + i + '-' + linguagens[i]+  '<h5>';
-      container.innerHTML+= tag;
-      }
-    }
-     function Posicaolinguagens(){
-      var indice = promp ('qual posicao da lista deseja consultar? ');
-      alert(linguagens[indice]);
-     }
-
-
-
-     let Frutas = array();
-     Fruta [0] = 'Banana';
-     Fruta [1] = 'Uva';
-     Fruta [2] = 'Pera';
-     Fruta [3] = 'Caja';
-     Fruta [4] = 'Maca'; 
-     Fruta [5] = 'Tomate';
-     Fruta [6] = 'Maracuja';
-
-     function Mostrarlistadefrutas(){
-      const container = document.getElementbyId('minhaDiv');
-      for (var i = 0;i<Frutas.length;i++) {
-      var tag = '<h5>'> + i + '-' + Frutas[i]+  '<h5>';
-      container.innerHTML+= tag;
-      }
-    }
-     function PosicaoFrutas(){
-      var indice = promp ('qual posicao da lista deseja consultar? ');
-      alert(Frutas[indice]);
-     }
-      </script>
-  <body>
-    <h1> Array de linguagem</h1>
-    <button onclick="Mostrarlistalinguagens()">Criar Array</button> <br><br>
-     <button onclick="Posicaolinguagens()">posicao no Array</button>
-     <div id="minhaDiv1="></div>
-
-     <h1> Array de Frutas</h1>
-    <button onclick="MostrarlistadeFrutas()">Criar Array</button> <br><br>
-     <button onclick="PosicaoFrutas()">posicao no Array</button>
-     <div id="minhaDiv2="></div>
-
-  </body>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Feitoza e Kauã César</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-  
+<body>
+    <h1>Atividade 03</h1>
+    <h1>Array de Linguagens</h1>
+    <button onclick="mostrarListaLinguagens()">Mostrar linguagens</button><br><br>
+    <button onclick="Posicaolinguagens()">Escolher posição</button>
+    <div id="minhaDiv"></div>
+    <hr/>
+
+    <button onclick="mostrarListaFrutas()">Mostrar frutas</button><br><br>
+    <button onclick="Posicaofrutas()">Escolher posição</button>
+    <div id="suaDiv"></div>
+
+    <hr/>
+    <p>Matheus Feitoza e Kauã César</p>
+    <a style="text-decoration: none;" href="index.html">Voltar</a><br/>
+
+    <script>
+        let linguagens = [];
+        linguagens[0] = 'Dart';
+        linguagens[1] = 'PHP';
+        linguagens[2] = 'Java';
+        linguagens[3] = 'Python';
+        linguagens[4] = 'Perl';
+        linguagens[5] = 'Ruby on Rails';
+        linguagens[6] = 'C++';
+
+        function mostrarListaLinguagens() {
+            const container = document.getElementById("minhaDiv");
+            container.innerHTML = '';
+            for (let i = 0; i < linguagens.length; i++) {
+                let tag = `<h5>${i} - ${linguagens[i]}</h5>`;
+                container.innerHTML += tag;
+            }
+        }
+
+        function Posicaolinguagens() {
+            let indice = prompt('Qual posição deseja consultar?');
+            if (indice >= 0 && indice < linguagens.length) {
+                alert(linguagens[indice]);
+            } else {
+                alert("Índice inválido!");
+            }
+        }
+        let frutas = [];
+        frutas[0] = 'maçã';
+        frutas[1] = 'banana';
+        frutas[2] = 'uva';
+
+        function mostrarListaFrutas() {
+            const container = document.getElementById("suaDiv");
+            container.innerHTML = '';
+            for (let i = 0; i < frutas.length; i++) {
+                let tag = `<h5>${i} - ${frutas[i]}</h5>`;
+                container.innerHTML += tag;
+            }
+        }
+
+        function Posicaofrutas() {
+            let indice = prompt('Qual posição deseja consultar?');
+            if (indice >= 0 && indice < frutas.length) {
+                alert(frutas[indice]);
+            } else {
+                alert("Índice inválido!");
+            }
+        }
+    </script>    
+</body>
+</html>
